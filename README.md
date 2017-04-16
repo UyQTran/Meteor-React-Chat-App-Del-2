@@ -30,6 +30,12 @@ og lett å bruke, tilnærmet ingen databasekunnskaper trengs for å begynne.
 
 Mer dokumentasjon om Meteor: http://docs.meteor.com/#/full/
 <a name="brukere"/>
-## Oppgave 1: Brukere
-Meteor tilbyr et allerede ferdiglaget brukersystem som benytter seg av en spesiell og mer
-sikker versjon av MongoDB. 
+## Oppgave 1: Mer oppsett
+
+__Oppgave 1.1: Mongol__  
+Mongol er et verktøy i Meteor som gir oss et brukergrensesnitt for å lettere jobbe med MongoDB
+databasen. Installer Mongol med følgende kommando:
+```
+meteor add msavin:mongol
+```
+
