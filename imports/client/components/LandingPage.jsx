@@ -28,9 +28,6 @@ export default class LandingPage extends Component {
     render() {
         return (
             <div className="landing-page">
-                <h1>
-                    {this.state.appName}
-                </h1>
                 <FlatButton
                     label="Create"
                     onTouchTap={this.handleCreateButton}/>

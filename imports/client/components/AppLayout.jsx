@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { PropTypes } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import AppHeader from './AppHeader.jsx';
 injectTapEventPlugin();
 
 export default class AppLayout extends Component {
@@ -13,19 +14,21 @@ export default class AppLayout extends Component {
 
     render() {
         return (
-            <div>
-                <MuiThemeProvider>
+            <MuiThemeProvider>
+                <div>
+                    <div>
+                        <header><AppHeader title={this.props.headerTitle}/></header>
+                    </div>
                     <div className="app-body">
-                        <header>{this.props.header}</header>
                         <main>{this.props.body}</main>
                     </div>
-                </MuiThemeProvider>
-            </div>
+                </div>
+            </MuiThemeProvider>
         );
     }
 }
 
 AppLayout.propTypes = {
-    header: PropTypes.node.isRequired,
+    headerTitle: PropTypes.string,
     body: PropTypes.node.isRequired
 };

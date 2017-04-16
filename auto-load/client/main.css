@@ -1,4 +1,18 @@
 /* CSS declarations go here */
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.title-text {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-right-style {
+    padding: 12px;
+}
+
 .app-body {
     background: #fff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

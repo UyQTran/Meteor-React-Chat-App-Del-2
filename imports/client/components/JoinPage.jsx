@@ -38,15 +38,16 @@ export default class JoinPage extends Component {
                 <h1>
                     {joinPageMessage}
                 </h1>
-                <TextField
-                    hintText="Enter a pin code"
-                    onChange={this.handleTextFieldChange}
-                    onKeyDown={this.handleKeyDown}
-                    value={this.state.textFieldValue}
-                />
-                <FlatButton
-                    label="Continue"
-                    onTouchTap={this.handleJoinButton}/>
+                <div style={{display:'flex'}}>
+                    <TextField
+                        hintText="Enter a pin code"
+                        onKeyDown={this.handleKeyDown}
+                    />
+                    <FlatButton
+                        label="Continue"
+                        onTouchTap={this.handleJoinButton}/>
+                </div>
+
             </div>
         );
     }
