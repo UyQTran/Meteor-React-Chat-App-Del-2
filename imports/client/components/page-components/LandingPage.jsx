@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FlatButton from 'material-ui/FlatButton';
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import PinGeneratorService from '../services/PinGeneratorService.jsx';
+import PinGeneratorService from '../../services/PinGeneratorService.jsx';
 
 export default class LandingPage extends Component {
 

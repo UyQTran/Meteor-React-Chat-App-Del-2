@@ -30,3 +30,12 @@ body {
 .chat-box {
     width: 100%;
 }
+
+.profile-picture {
+    margin: 20px;
+}
+
+.right-drawer-items {
+    display: flex;
+    flex-direction: column;
+}

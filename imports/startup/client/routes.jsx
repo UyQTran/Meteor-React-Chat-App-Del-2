@@ -1,10 +1,10 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import AppLayout from '../../client/components/AppLayout.jsx';
+import AppLayout from '../../client/components/app-components/AppLayout.jsx';
 import {mount} from 'react-mounter';
 import React from 'react';
-import LandingPage from '../../client/components/LandingPage.jsx';
-import ChatPage from '/imports/client/components/ChatPage.jsx';
-import JoinPage from '/imports/client/components/JoinPage.jsx';
+import LandingPage from '../../client/components/page-components/LandingPage.jsx';
+import ChatPage from '/imports/client/components/page-components/ChatPage.jsx';
+import JoinPage from '/imports/client/components/page-components/JoinPage.jsx';
 
 FlowRouter.route('/', {
     name: 'rootview',
