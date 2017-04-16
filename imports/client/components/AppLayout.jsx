@@ -16,6 +16,7 @@ export default class AppLayout extends Component {
             <div>
                 <MuiThemeProvider>
                     <div className="app-body">
+                        <header>{this.props.header}</header>
                         <main>{this.props.body}</main>
                     </div>
                 </MuiThemeProvider>
@@ -25,5 +26,6 @@ export default class AppLayout extends Component {
 }
 
 AppLayout.propTypes = {
+    header: PropTypes.node.isRequired,
     body: PropTypes.node.isRequired
 };
