@@ -5,7 +5,7 @@ import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar';
 import MenuItem from 'material-ui/MenuItem';
 
 
-export default class AppLeftDrawer extends Component {
+export default class AppRightDrawer extends Component {
 
     constructor(props) {
         super(props);
@@ -21,6 +21,7 @@ export default class AppLeftDrawer extends Component {
                 <Drawer
                     docked={false}
                     width={200}
+                    openSecondary={true}
                     open={this.props.open}
                     onRequestChange={this.props.onRequestChange}>
                     <Toolbar>
@@ -40,7 +41,7 @@ export default class AppLeftDrawer extends Component {
     }
 }
 
-AppLeftDrawer.propTypes = {
+AppRightDrawer.propTypes = {
     open: PropTypes.bool.isRequired,
     onRequestChange: PropTypes.func.isRequired
 };

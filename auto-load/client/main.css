@@ -16,8 +16,7 @@ body {
 .app-body {
     background: #fff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin: 0 auto;
-    padding: 2em 10em 4em;
+    margin: 20px auto;
 }
 
 .landing-page {
@@ -32,10 +31,16 @@ body {
 }
 
 .profile-picture {
-    margin: 20px;
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 100px;
 }
 
 .right-drawer-items {
     display: flex;
     flex-direction: column;
+}
+
+.chat-page {
+    margin: 20px;
 }
