@@ -25,3 +25,5 @@ alanning:roles
 msavin:mongol
 ultimatejs:tracker-react
 accounts-ui
+useraccounts:bootstrap
+accounts-password

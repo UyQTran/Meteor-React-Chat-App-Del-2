@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { PropTypes } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import AppHeader from './AppHeader.jsx';
+import LoginPage from './LoginPage';
 injectTapEventPlugin();
 
 export default class AppLayout extends Component {
@@ -21,6 +22,7 @@ export default class AppLayout extends Component {
                     </div>
                     <div className="app-body">
                         <main>{this.props.body}</main>
+                        <LoginPage/>
                     </div>
                 </div>
             </MuiThemeProvider>

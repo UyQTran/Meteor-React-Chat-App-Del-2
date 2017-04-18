@@ -5,6 +5,9 @@ import React from 'react';
 import LandingPage from '../../client/components/page-components/LandingPage.jsx';
 import ChatPage from '/imports/client/components/page-components/ChatPage.jsx';
 import JoinPage from '/imports/client/components/page-components/JoinPage.jsx';
+import LoginPage from "../../client/components/app-components/LoginPage";
+
+
 
 FlowRouter.route('/', {
     name: 'rootview',
