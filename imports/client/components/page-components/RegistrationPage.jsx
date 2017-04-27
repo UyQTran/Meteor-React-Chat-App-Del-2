@@ -3,21 +3,24 @@ import {FlowRouter} from 'meteor/kadira:flow-router';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import { PropTypes } from 'react';
+import { Accounts } from 'meteor/accounts-base';
 
-export default class LoginPage extends Component {
+export default class RegistrationPage extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            confirmPassword: ''
         };
 
 
         this.handleUsernameTextFieldChange = this.handleUsernameTextFieldChange.bind(this);
         this.handlePasswordTextFieldChange = this.handlePasswordTextFieldChange.bind(this);
-        this.handleSignIn = this.handleSignIn.bind(this);
+        this.handleConfirmPasswordTextFieldChange = this.handleConfirmPasswordTextFieldChange.bind(this);
+        this.handleRegister = this.handleRegister.bind(this);
     }
 
     handleUsernameTextFieldChange(event, newValue) {
@@ -28,18 +31,24 @@ export default class LoginPage extends Component {
         this.setState({password: newValue});
     }
 
-    handleSignIn() {
-        Meteor.loginWithPassword(this.state.username, this.state.password, function(error) {
-            if (error) {
-                console.log("There was an error:" + error.reason);
-            } else {
-                FlowRouter.go('/landing-page');
-            }
-        });
+    handleConfirmPasswordTextFieldChange(event, newValue) {
+        this.setState({confirmPassword: newValue});
     }
 
     handleRegister() {
-        FlowRouter.go('register');
+
+        Accounts.createUser(
+            {
+                email: this.state.username,
+                password: this.state.password
+            },
+            (error)=>{
+                if (error) {
+                    console.log("there was an error: " + error.reason);
+                } else {
+                    FlowRouter.go('rootview');
+                };
+            });
     }
 
     render() {
@@ -56,18 +65,16 @@ export default class LoginPage extends Component {
                     type="password"
                     value={this.state.password}
                 />
-                <FlatButton
-                    label="Sign in"
-                    onTouchTap={this.handleSignIn}
+                <TextField
+                    floatingLabelText="Confirm Password"
+                    onChange={this.handleConfirmPasswordTextFieldChange}
+                    type="password"
+                    value={this.state.confirmPassword}
                 />
                 <FlatButton
-                    label="New User"
+                    label="Register"
                     onTouchTap={this.handleRegister}
                 />
             </div>);
     }
 }
-
-LoginPage.propTypes = {
-    onSubmit: PropTypes.func.isRequired
-};

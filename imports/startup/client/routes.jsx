@@ -5,8 +5,22 @@ import React from 'react';
 import LandingPage from '../../client/components/page-components/LandingPage.jsx';
 import ChatPage from '/imports/client/components/page-components/ChatPage.jsx';
 import JoinPage from '/imports/client/components/page-components/JoinPage.jsx';
+import RegistrationPage from "../../client/components/page-components/RegistrationPage";
 import LoginPage from "../../client/components/page-components/LoginPage";
 import AppHeader from "../../client/components/app-components/AppHeader";
+
+FlowRouter.route('/register', {
+    name: 'register',
+    action(props) {
+        mount(AppLayout, {
+            appHeader: (<AppHeader
+                showRightButton={false}
+                showLeftButton={false}
+            />),
+            body: (<RegistrationPage/>)
+        });
+    }
+});
 
 FlowRouter.route('/', {
     name: 'rootview',
