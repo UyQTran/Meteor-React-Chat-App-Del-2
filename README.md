@@ -56,10 +56,10 @@ meteor add msavin:mongol
 Start appen og åpne den i en nettleser. Med hotkey ctrl + M så skal det komme et brukergrensesnitt i appen
 med full oversikt over databasen.
 
-__Oppgave 1.2: App Bar__  
+__Oppgave 1.2: AppBar__  
 Hvis du noen gang har brukt en Android eller Google app så har du sikkert merket at de fleste appene har
 en app bar øverst med en hamburgermeny på venstre side. Vi skal nå lage denne i vår app og gjøre endringer
-i layouten vår for å kunne legge inn ting som egne tittler på app baren. Her er et eksmpelbilde av hvordan
+i vår layout for å kunne legge inn ting som egne tittler på app baren. Her er et eksmpelbilde av hvordan
 app baren ser ut i Google Inbox:
 
 ![bilde](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/Google-Inbox-app.jpg)
@@ -69,7 +69,7 @@ deklarasjonene som du har gjort tidligere. Vi vil at app baren vår skal innehol
 tilbakeknapp og en knapp som åpner en drawer som skal vise noe (dette kommer vi tilbake
 til senere). Importer følgende i AppHeader:
 
-```
+```javascript
 import AppBar from 'material-ui/AppBar';
 import GroupIcon from 'material-ui/svg-icons/social/group';
 import ArrowBackIcon from 'material-ui/svg-icons/navigation/arrow-back';
@@ -100,3 +100,52 @@ på AppBar i LandingPage og nummer på chatrommet i ChatRoom.
 
 Nå skal appbaren være synlig i appen, bygg opp appen og skjekk om det er en blå bar
 øverst på appen.
+
+AppBar tar imot en property, titleStyle, som tar imot et Javascript in-line CSS objekt
+som bestemmer hvordan stylingen til tittelen skal ha.
+
+__Oppgave 1.3: IconButton__  
+La oss nå legge til en tilbakeknapp på venstre side av AppBar. AppBar har to
+properties som heter iconElementLeft og iconElementRight som tar imot et HTML-element
+og renderer disse på hver sin plass av AppBaren. Sett iconElementLeft til følgende
+kode:
+
+```
+<IconButton
+    className="icon-right-style"
+    onTouchTap={()=>window.history.back()}
+>
+    <ArrowBackIcon color="#fff"/>
+</IconButton>
+```
+
+Obs! Husk å gjøre lambdafunksjonen til en vanlig funksjon og sende inn referansen
+til onTouchTap istedet.
+
+__Oppgave 1.4: Drawer__  
+Drawer er som navnet tilsier, en skuff og vi skal nå legge til denne i appen.
+Akkurat som AppHeader så skal denne være en del av vår AppLayout, men vi kan gjøre 
+det enda lettere og oversiktlig for oss selv. Fordi Drawer kun skal bli styrt av
+AppHeader så kan vi heller legge til Drawer her. Importer Drawer fra material-ui/Drawer
+i AppHeader.
+
+Lag en IconButton på samme måte som du gjorde med iconLeftElement, men med 
+iconRightElement istedet. Denne slaø ha GroupIcon som icon.
+
+Drawer har en property, open, som tar imot en bolsk verdi som bestemmer om Drawer
+skal være åpen. Lag en funksjon med et attributt i state, open, som er satt til false
+og så lag en funksjon som setter denne til true hvis den høyre IconButton blir trykket
+på. Drawer tar også imot en property, onRequestChange som må bli satt til en slik
+funksjon:
+
+```javascript
+handleDrawerToggle(open) {
+    this.setState({rightDrawerOpen:open});
+}
+```
+
+Drawer har en property, openSecondary som tar imot en bolsk verdi som bestemmer 
+hvilken side Drawer skal komme opp fra. Sett den til true for at Drawer skal komme
+fra høyre side.
+
+Nå skal høyre knapp åpne Drawer, test dette!
