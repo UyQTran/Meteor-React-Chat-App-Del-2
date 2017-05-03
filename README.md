@@ -44,7 +44,7 @@ og lett å bruke, tilnærmet ingen databasekunnskaper trengs for å begynne.
 
 Mer dokumentasjon om Meteor: http://docs.meteor.com/#/full/
 <a name="material-ui"/>
-## Oppgave 1: Material-UI
+## Oppgave 1: Material-UI og diverse
 
 __Oppgave 1.1: Mongol__  
 Mongol er et verktøy i Meteor som gir oss et brukergrensesnitt for å lettere jobbe med MongoDB
