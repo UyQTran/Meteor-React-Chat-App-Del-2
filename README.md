@@ -1,4 +1,4 @@
-# Applitude - Chat App med ReactJS og Meteor Del 2
+# Chat App med ReactJS og Meteor Del 2
 #### Innhold  
 [Oppgave 0: Forord](#forord)  
 [Oppgave 1: Material-UI](#material-ui)  
